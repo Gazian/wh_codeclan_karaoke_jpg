@@ -13,4 +13,7 @@ class Room:
 
     def check_out_guest(self,guest_to_check_out):
         self.guest_list.remove(guest_to_check_out)
+
+    def room_song_count(self):
+        return len(self.songs)
     
