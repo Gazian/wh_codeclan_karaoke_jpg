@@ -1,6 +1,7 @@
 import unittest
 from classes.room import Room
 from classes.guest import Guest
+from codeclan_karaoke.classes.song import Song
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
@@ -29,4 +30,7 @@ class TestRoom(unittest.TestCase):
     def test_song_list_starts_empty(self):
         self.assertEqual(0, self.room.room_song_count())
 
-    
+    def test_add_song_to_room(self):
+        song = Song("It Was a Good Day","Ice Cube","Rap")
+        self.room.add_song(song)
+        self.assertEqual(1,self.room.room_song_count())
