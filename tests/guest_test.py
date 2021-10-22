@@ -14,3 +14,4 @@ class TestGuest(unittest.TestCase):
     def test_guest_has_fave_song(self):
         self.assertEqual("Skeleton Boy",self.guest.fave_song)
 
+    
