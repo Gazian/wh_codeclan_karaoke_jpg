@@ -1,7 +1,7 @@
 import unittest
 from classes.room import Room
 from classes.guest import Guest
-from codeclan_karaoke.classes.song import Song
+from classes.song import Song
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
