@@ -35,6 +35,17 @@ class Room:
     def print_song_list(self):
         for song in self.songs: print (song.song_title,song.artist,song.genre)
 
+    def room_capacity_limit_reached(self):
+        while (len(self.guest_list) <= self.capacity_limit):
+            print(f"welcome to the {self.name} karaoke room")
+            if len(self.guest_list) > self.capacity_limit:
+                break
+            print(f"Sorry, {self.name} karaoke room has reached capacity")
+        self.guest_list.pop()
+        # else:
+        #     self.guest_list.pop()
+        #     print (f"Sorry {self.name} karaoke room is at full capacity")  
+
     
 
     

@@ -62,8 +62,8 @@ class TestRoom(unittest.TestCase):
         self.room.room_capacity_limit_reached()
         self.room.check_in_guest(guest_3)
         self.room.room_capacity_limit_reached()
-        self.room.check_in_guest(guest_4)
-        self.room.room_capacity_limit_reached()
-        self.assertListEqual(3,self.room.room_guest_list_count)
+        # self.room.check_in_guest(guest_4)
+        # self.room.room_capacity_limit_reached()
+        self.assertEqual(3,self.room.room_guest_list_count())
         
         
