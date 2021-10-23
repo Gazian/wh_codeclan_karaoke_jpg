@@ -1,3 +1,4 @@
+from classes.guest import Guest
 class Room:
     def __init__(self,name,entry_fee):
         self.name = name
@@ -19,4 +20,4 @@ class Room:
 
     def add_song(self,song_to_add):
         self.songs.append(song_to_add)
-    
+
