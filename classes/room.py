@@ -1,11 +1,12 @@
 from classes.guest import Guest
 from classes.song import Song
 class Room:
-    def __init__(self,name,entry_fee):
+    def __init__(self,name,entry_fee,capacity_limit):
         self.name = name
         self.entry_fee = entry_fee
         self.guest_list = []
         self.songs = []
+        self.capacity_limit = capacity_limit
 
     def room_guest_list_count(self):
         return len(self.guest_list)
@@ -19,7 +20,7 @@ class Room:
     def clear_guest_list(self):
         self.guest_list.clear()
 
-    def clear_song_list(self):
+    def clear_song_list_all(self):
         self.songs.clear()
 
     def room_song_count(self):
