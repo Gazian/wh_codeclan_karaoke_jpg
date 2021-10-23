@@ -49,3 +49,21 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_capacity_limit(self):
         self.assertEqual(6,self.room.capacity_limit)
+
+    def test_room_capacity_limit_reached(self):
+        room = Room ("Aftermath",5,3)
+        guest_1 = Guest("Paul",24,"Ain't No Doubt")
+        guest_2 = Guest("Shaz",45,"There's No Limit")
+        guest_3 = Guest("Karen",30,"You Can't Touch This")
+        guest_4 = Guest("Simon",15,"Broken Stones")
+        self.room.check_in_guest(guest_1)
+        self.room.room_capacity_limit_reached()
+        self.room.check_in_guest(guest_2)
+        self.room.room_capacity_limit_reached()
+        self.room.check_in_guest(guest_3)
+        self.room.room_capacity_limit_reached()
+        self.room.check_in_guest(guest_4)
+        self.room.room_capacity_limit_reached()
+        self.assertListEqual(3,self.room.room_guest_list_count)
+        
+        
