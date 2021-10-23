@@ -25,7 +25,7 @@ class TestRoom(unittest.TestCase):
         guest = Guest("Katy",25,"The best song in the World")
         self.room.check_in_guest(guest)
         self.room.print_guest_list()
-        self.room.check_out_guest(guest)
+        self.room.clear_guest_list()
         self.assertEqual(0, self.room.room_guest_list_count())
 
     def test_song_list_starts_empty(self):
@@ -34,4 +34,16 @@ class TestRoom(unittest.TestCase):
     def test_add_song_to_room(self):
         song = Song("It Was a Good Day","Ice Cube","Rap")
         self.room.add_song(song)
+        self.room.print_song_list()
         self.assertEqual(1,self.room.room_song_count())
+
+    def test_clear_song_list_all(self):
+        song_1 = Song("I shot the Sheriff","Bob Marley & the Wailers","Reggae")
+        song_2 = Song("You Need To Calm Down","Taylor Swift","Pop")
+        self.room.add_song(song_1)
+        self.room.add_song(song_2)
+        self.room.print_song_list()
+        self.assertEqual(2,self.room.room_song_count())
+        self.room.clear_song_list()
+        self.assertEqual(0,self.room.room_song_count())
+
