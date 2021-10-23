@@ -24,6 +24,7 @@ class TestRoom(unittest.TestCase):
     def test_check_out_guest(self):
         guest = Guest("Katy",25,"The best song in the World")
         self.room.check_in_guest(guest)
+        self.room.print_guest_list()
         self.room.check_out_guest(guest)
         self.assertEqual(0, self.room.room_guest_list_count())
 
