@@ -2,6 +2,7 @@ import unittest
 from classes.room import Room
 from classes.guest import Guest
 from classes.song import Song
+import pdb
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
@@ -57,13 +58,13 @@ class TestRoom(unittest.TestCase):
         guest_3 = Guest("Karen",30,"You Can't Touch This")
         guest_4 = Guest("Simon",15,"Broken Stones")
         self.room.check_in_guest(guest_1)
-        self.room.room_capacity_limit_reached()
+        self.room.room_capacity_limit_reached(room)
         self.room.check_in_guest(guest_2)
-        self.room.room_capacity_limit_reached()
+        self.room.room_capacity_limit_reached(room)
         self.room.check_in_guest(guest_3)
-        self.room.room_capacity_limit_reached()
-        # self.room.check_in_guest(guest_4)
-        # self.room.room_capacity_limit_reached()
+        self.room.room_capacity_limit_reached(room)
+        self.room.check_in_guest(guest_4)
+        self.room.room_capacity_limit_reached(room)
         self.assertEqual(3,self.room.room_guest_list_count())
         
         

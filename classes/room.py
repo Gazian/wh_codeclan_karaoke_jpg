@@ -11,11 +11,12 @@ class Room:
     def room_guest_list_count(self):
         return len(self.guest_list)
 
-    def check_in_guest(self,guest_to_check_in):
+    def check_in_guest(self,guest_to_check_in): 
         self.guest_list.append(guest_to_check_in)
 
     def check_out_guest(self,guest_to_check_out):
         self.guest_list.remove(guest_to_check_out)
+        
 
     def clear_guest_list(self):
         self.guest_list.clear()
@@ -35,13 +36,11 @@ class Room:
     def print_song_list(self):
         for song in self.songs: print (song.song_title,song.artist,song.genre)
 
-    def room_capacity_limit_reached(self):
-        while (len(self.guest_list) <= self.capacity_limit):
-            print(f"welcome to the {self.name} karaoke room")
-            if len(self.guest_list) > self.capacity_limit:
-                break
-            print(f"Sorry, {self.name} karaoke room has reached capacity")
-        self.guest_list.pop()
+    def room_capacity_limit_reached(self,room):
+        if len(self.guest_list) <= room.capacity_limit: print(f"Welcome to the {self.name} karaoke room!") 
+        else: self.guest_list.pop() and print(f"Sorry, the {self.name} karaoke room is at maximum capacity")  
+        
+        
         # else:
         #     self.guest_list.pop()
         #     print (f"Sorry {self.name} karaoke room is at full capacity")  
