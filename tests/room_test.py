@@ -66,5 +66,12 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(guest_4)
         self.room.room_capacity_limit_reached(room)
         self.assertEqual(3,self.room.room_guest_list_count())
+
+    def test_room_can_take_entry_fee(self):
+        guest = Guest("Claire",25,"Skeleton Boy")
+        room = Room ("Polydor",7.5,5)
+        self.room.check_in_guest(guest)
+        self.room.take_entry_fee(guest,room)
+
         
         
