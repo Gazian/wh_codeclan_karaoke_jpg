@@ -39,7 +39,12 @@ class Room:
     def room_capacity_limit_reached(self,room):
         if len(self.guest_list) <= room.capacity_limit: print(f"Welcome to the {self.name} karaoke room!") 
         else: self.guest_list.pop() and print(f"Sorry, the {self.name} karaoke room is at maximum capacity")  
-        
+
+    def take_entry_fee(self,room):
+        for guest in self.guest_list:
+            guest.money -= room.entry_fee
+
+
         
         # else:
         #     self.guest_list.pop()
